@@ -4,6 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  // base MUST stay './' — relative paths are required so that assets resolve
+  // correctly from both juce:// and file:// origins in the embedded browser.
+  // Do NOT change this to '/' or any absolute path.
+  base: './',
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
